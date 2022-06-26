@@ -94,6 +94,9 @@ body {
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 }
+.nav-link.current {
+	color: var(--hover-link-color);
+}
 .header-mail,
 .header-phone {
 	font-weight: 500;
@@ -155,8 +158,8 @@ body {
 	padding-top: 94px;
 }
 .peculiarities-list-item {
-	width: 270px;
-	height: 101px;
+	max-width: 270px;
+	max-height: 101px;
 }
 .peculiarities-title {
 	font-weight: 700;
@@ -171,6 +174,7 @@ body {
 	letter-spacing: 0.03em;
 	color: var(--grey-text-color);
 	margin-top: 10px;
+	min-height: 75px;
 }
 /* activity section */
 .activity-section {
@@ -190,7 +194,7 @@ body {
 }
 .activity-img {
 	display: block;
-	width: 370px;
+	width: 100%;
 	height: auto;
 }
 /* team section */
@@ -224,6 +228,7 @@ body {
 .employee-photo {
 	display: block;
 	width: 100%;
+	height: auto;
 }
 .employee-name {
 	font-weight: 500;
@@ -242,8 +247,21 @@ body {
 	margin-top: 10px;
 }
 /* Portfolio */
+.portfolio-section {
+	flex-direction: column;
+	align-items: center;
+}
+.portfolio-title {
+	display: none;
+}
+.filter-list {
+	justify-content: center;
+	padding-bottom: 16px;
+}
+.filter-list-item:not(:first-child) {
+	margin-left: 8px;
+}
 .filter-btn {
-	/* position: absolute; */
 	background: #f5f4fa;
 	border: none;
 	border-radius: 4px;
@@ -255,7 +273,6 @@ body {
 	text-align: center;
 	letter-spacing: 0.03em;
 	color: var(--main-text-color);
-	margin: 8px;
 	padding: 6px 22px;
 }
 .filter-btn:hover,
@@ -265,18 +282,35 @@ body {
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 	color: var(--white);
 }
-.project-list-item {
-	width: 370px;
-	border: 1px solid #eeeeee;
-	margin: 30px;
+.project-list {
+	flex-wrap: wrap;
+	margin-top: 34px;
 }
-
+.project-list-item {
+	flex-basis: 370px;
+	max-width: 370px;
+	max-height: 404px;
+	border: 1px solid #eeeeee;
+	padding-bottom: 20px;
+}
+.project-list-item:not(:nth-child(3n + 1)) {
+	margin-left: 30px;
+}
+.project-list-item:nth-child(n + 4) {
+	margin-top: 30px;
+}
+.project-list-img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
 .project-title {
 	font-weight: 700;
 	font-size: 18px;
 	line-height: 2;
 	letter-spacing: 0.06em;
 	margin-left: 24px;
+	margin-top: 20px;
 }
 .project-type {
 	font-size: 16px;
@@ -284,6 +318,7 @@ body {
 	letter-spacing: 0.03em;
 	color: var(--grey-text-color);
 	margin-left: 24px;
+	margin-top: 4px;
 }
 /* Footer styles */
 .footer {
