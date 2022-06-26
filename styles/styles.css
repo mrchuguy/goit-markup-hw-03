@@ -8,12 +8,17 @@
 	--team-section-bg: #f5f4fa;
 }
 /* Global styles */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+}
 body {
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
 	color: var(--main-text-color);
 	background: var(--white);
-	margin: 0 auto;
 }
 .link {
 	color: var(--main-text-color);
@@ -27,14 +32,27 @@ body {
 .btn {
 	cursor: pointer;
 }
+.container {
+	display: flex;
+	max-width: 1170px;
+}
 .list {
 	list-style-type: none;
 	padding: 0;
 }
 /* Header styles */
 .header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	/* height: 80px; */
 	border-bottom: 1px solid #ececec;
+	padding: 24px 215px 25px;
+}
+.nav-wrap {
+	display: flex;
+	align-items: center;
+	min-height: 31px;
 }
 .logo {
 	font-family: "Raleway", sans-serif;
@@ -50,7 +68,15 @@ body {
 .logo-color {
 	color: var(--hover-link-color);
 }
-
+.nav {
+	margin-left: 93px;
+}
+.nav-list {
+	display: flex;
+}
+.nav-list-item:not(:first-child) {
+	margin-left: 50px;
+}
 .nav-link {
 	font-weight: 500;
 	font-size: 14px;
@@ -65,18 +91,21 @@ body {
 	letter-spacing: 0.02em;
 	color: var(--grey-text-color);
 }
+.header-phone {
+	margin-left: 50px;
+}
 /* Main section styles */
 /* Order section */
-.order-section {
+.hero-section {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	background: var(--dark-bg);
-	height: 600px;
+	padding: 200px 0;
 }
-.order-title {
-	width: 696px;
-	height: 120px;
+.hero-title {
+	max-width: 696px;
+	min-height: 120px;
 	font-weight: 900;
 	font-size: 44px;
 	line-height: 1.36;
@@ -84,12 +113,11 @@ body {
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: var(--white);
-	margin: 200px 0 0 0;
 }
-.order-btn {
+.modal-btn {
 	display: block;
-	width: 200px;
-	height: 50px;
+	min-width: 200px;
+	min-height: 50px;
 	background: var(--hover-link-color);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	border: none;
@@ -102,7 +130,7 @@ body {
 	color: var(--white);
 	margin-top: 30px;
 }
-.order-btn:hover {
+.modal-btn:hover {
 	background: #188ce8;
 }
 /* Peculiarities list */
